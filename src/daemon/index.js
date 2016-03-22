@@ -37,11 +37,11 @@ const {
   HOMEPATH,
   USERPROFILE
 } = process.env
-const home_path = HOME || HOMEPATH || USERPROFILE
+const homePath = HOME || HOMEPATH || USERPROFILE
 
 if (conf.key_path && conf.cert_path) {
-  ssl.key = fs.readFileSync(path.join(home_path, conf.key_path))
-  ssl.cert = fs.readFileSync(path.join(home_path, conf.cert_path))
+  ssl.key = fs.readFileSync(path.join(homePath, conf.key_path))
+  ssl.cert = fs.readFileSync(path.join(homePath, conf.cert_path))
 } else {
   ssl.key = fs.readFileSync(path.join(__dirname, 'certs/server.key'))
   ssl.cert = fs.readFileSync(path.join(__dirname, 'certs/server.crt'))
